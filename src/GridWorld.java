@@ -1,4 +1,4 @@
-import java.awt.Color;
+  import java.awt.Color;
 import java.util.Random;
 import info.gridworld.actor.*;
 import info.gridworld.world.*;
