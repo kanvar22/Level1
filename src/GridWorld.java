@@ -1,4 +1,4 @@
-  import java.awt.Color;
+import java.awt.Color;
 import java.util.Random;
 import info.gridworld.actor.*;
 import info.gridworld.world.*;
@@ -12,7 +12,7 @@ public class GridWorld {
 		int number1 = new Random().nextInt(10);
 		World World1= new World();
 		World1.show();
-       /* Bug Bug1 = new Bug();
+        Bug Bug1 = new Bug();
         Location Location1 = new Location(2, 2);
         World1.add(Location1, Bug1);
         Bug Bug2 = new Bug();
@@ -37,13 +37,16 @@ public class GridWorld {
 	}
 
 }
-/*
 
+8.
 
+Fill the
+whole world
+with flowers!*9.[Optional]
+Color the
+flowers in
+rows like
+the American
 
-
-
-
-8. Fill the whole world with flowers!
-*9. [Optional] Color the flowers in rows like the American flag (red & white)
+flag (red & white)
 */
