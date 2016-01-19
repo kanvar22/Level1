@@ -3,8 +3,8 @@ import javax.swing.JOptionPane;
 
 public class BinaryBlaster {
 	public static void main(String[] args) {
-		String Input = JOptionPane.showInputDialog("What would you like me to convert to binary?");
-		//
+		String Input = JOptionPane.showInputDialog("What would you like me to convert from binary?");
+		// char
 		char no0 = Input.charAt(0);
 		char no1 = Input.charAt(1);
 		char no2 = Input.charAt(2);
