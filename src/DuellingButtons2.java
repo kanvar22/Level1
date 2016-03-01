@@ -1,4 +1,3 @@
-
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,14 +6,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class DuellingButtons implements ActionListener {
+public class DuellingButtons2 implements ActionListener {
 
 	public static void main(String[] args) {
-		new DuellingButtons().createUI();
+		new DuellingButtons2().createUI();
 	}
 
 	JButton leftButton = new JButton();
 	JButton rightButton = new JButton();
+	JButton centerButton = new JButton();
 
 	Dimension BIG = new Dimension(400, 400);
 	Dimension SMALL = new Dimension(200, 200);
@@ -31,18 +31,21 @@ public class DuellingButtons implements ActionListener {
 		leftButton.setText("Click Me!");
 		// 4. Set the text of the rightButton to "Click me!"
 		rightButton.setText("Click Me!");
+		centerButton.setText("Click Me!");
 		// 5. Add an action listener to the leftButton
 		leftButton.addActionListener(this);
 		// 6. Add an action listener to the rightButton
 		rightButton.addActionListener(this);
+		centerButton.addActionListener(this);
 		// 7. Add the leftButton to the panel
 		panel.add(leftButton);
 		// 8. Add the rightButton to the panel
 		panel.add(rightButton);
+		panel.add(centerButton);
 		// 9. Pack the frame
 		frame.pack();
 		// 10. Set the title of the frame to "Demanding Buttons"
-		frame.setTitle("Demanding Buttons");
+		frame.setTitle("Demanding Buttons!");
 	}
 
 	@Override
@@ -50,24 +53,36 @@ public class DuellingButtons implements ActionListener {
 		JButton buttonPressed = (JButton) arg0.getSource();
 
 		/* If the buttonPressed was the leftButton.... */
-		if (rightButton == buttonPressed) {
-			leftButton.setText("Click Me!");
-			leftButton.setSize(SMALL);
-		}
-		if (leftButton == buttonPressed) {
-			rightButton.setText("No, click Me!");
-			rightButton.setSize(BIG);
-		}
 		// Set the text of the rightButton to "No, click Me!"
-
-		// Set the preferred size of the rightButton to BIG
-
+		// Set the PREFERRED size of the rightButton to BIG
 		// Set the text of the leftButton to "Click Me!"
-
-		// Set the preferred size of the leftButton to SMALL
+		// Set the PREFERRED size of the leftButton to SMALL
 
 		/* If the buttonPressed was the rightButton, do the opposite. */
-
+		if (buttonPressed.equals(leftButton)) {
+			rightButton.setText("No, Click Me!");
+			rightButton.setPreferredSize(BIG);
+			leftButton.setPreferredSize(SMALL);
+			leftButton.setText("Click Me!");
+			centerButton.setText("No, Click Me!");
+			centerButton.setPreferredSize(BIG);
+		}
+		if (buttonPressed.equals(rightButton)) {
+			leftButton.setText("No, Click Me");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setPreferredSize(SMALL);
+			rightButton.setText("Click Me!");
+			centerButton.setText("No, Click Me!");
+			centerButton.setPreferredSize(BIG);
+		}
+		if (buttonPressed.equals(centerButton)) {
+			leftButton.setText("No, Click Me");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setText("No, Click Me!");
+			rightButton.setPreferredSize(BIG);
+			centerButton.setText("Click Me!");
+			centerButton.setPreferredSize(SMALL);
+		}
 		frame.pack();
 	}
 }

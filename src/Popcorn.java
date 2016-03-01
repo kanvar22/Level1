@@ -30,7 +30,7 @@ public class Popcorn {
 	}
 
 	public static void main(String[] args) {
-		Microwave micro = new Microwave();
+		Microwave2 micro = new Microwave2();
 		Popcorn pop = new Popcorn("butter");
 		micro.putInMicrowave(pop);
 		micro.setTime(60);
