@@ -1,5 +1,5 @@
 import java.applet.AudioClip;
-import java.io.IOException;
+
 import javax.swing.JApplet;
 
 public class CowTimer {
@@ -10,12 +10,10 @@ public class CowTimer {
 
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
-    CowTimer cowtimer2 = new CowTimer();
-	cowtimer2.setTime(10);
-	cowtimer2.start();
+		CowTimer cowtimer2 = new CowTimer();
+		cowtimer2.setTime(10);
+		cowtimer2.start();
 	}
-	
-	
 
 	private int minutes;
 
@@ -29,24 +27,24 @@ public class CowTimer {
 		 * 2. Count down the minutes, print the current minute then sleep for 60
 		 * seconds using Thread.sleep(int milliseconds).
 		 */
-      for (int i = 0; i < ; i++) {
-		Thread.sleep(60);
-	}
+		for (int i = 0; i < 4; i++) {
+			Thread.sleep(60);
+		}
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo
 		 * sound. You can download one from freesound.org, then drag it into
-		 * your default package. Tell the students (by speaking) it's time to walk.
+		 * your default package. Tell the students (by speaking) it's time to
+		 * walk.
 		 */
 
 	}
 
 	private void playSound(String fileName) {
-		AudioClip sound = JApplet
-				.newAudioClip(getClass().getResource(fileName));
+		AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
 		sound.play();
 	}
 
-private void speak(String stuffToSay) {
+	private void speak(String stuffToSay) {
 		try {
 			Runtime.getRuntime().exec("say " + stuffToSay).waitFor();
 		} catch (Exception e) {
@@ -54,6 +52,4 @@ private void speak(String stuffToSay) {
 		}
 	}
 
-
 }
-

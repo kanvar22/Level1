@@ -1,6 +1,6 @@
+
 // Copyright Wintriss Technical Schools 2013
 import java.applet.AudioClip;
-import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -13,34 +13,43 @@ import org.teachingextensions.logo.TurtlePanel;
 
 public class HolidayCard extends MouseAdapter {
 
-	/* VARIATIONS: 
-	 * 6. Add a red light at the top of the tree. */
-	
+	/*
+	 * VARIATIONS: 6. Add a red light at the top of the tree.
+	 */
+
 	TurtlePanel programWindow;
 	double widthOfTree;
 
-	/* 1. Implement this method to draw the body of the tree */
+	/* 1. Implement this me thod to draw the body of the tree */
 	void drawTreeBody() {
 		// Make a variable for turnAmount and set it to 175
-
 		// Make a variable that sets the scale to 1.1
-
+		int turnAmount = 175;
+		double scale = 1.1;
 		// Do the following 11 times
+		for (int i = 0; i < 11; i++) {
+			turnAmount--;
+			Tortoise.turn(turnAmount);
+			widthOfTree = widthOfTree * scale;
+			Tortoise.move(widthOfTree);
+			Tortoise.turn(-turnAmount);
+			widthOfTree = widthOfTree * scale;
+			Tortoise.move(widthOfTree);
+		}
+		// Turn the tortoise the current turnAmount to the right
 
-			// Turn the tortoise the current turnAmount to the right
-	
-			// Set the widthOfTree to the current widthOfTree times the scale
-	
-			// Move the tortoise the width of a tree
-	
-			// Turn the tortoise the current turn amount to the left
-	
-			// Set the widthOfTree to the current widthOfTree times the scale again
-	
-			// Move the tortoise the tree width
-	
-			// Decrease turnAmount by 1
-		
+		// Set the widthOfTree to the current widthOfTree times the scale
+
+		// Move the tortoise the width of a tree
+
+		// Turn the tortoise the current turn amount to the left
+
+		// Set the widthOfTree to the current widthOfTree times the scale again
+
+		// Move the tortoise the tree width
+
+		// Decrease turnAmount by 1
+
 	}
 
 	public static void main(String[] args) {
@@ -50,34 +59,44 @@ public class HolidayCard extends MouseAdapter {
 	HolidayCard() {
 		programWindow = Tortoise.getBackgroundWindow();
 		Tortoise.setSpeed(10);
-		
+
 		/* 2. Only draw trees when the mouse is clicked. */
 		// Add a mouse listener to the program window
-		
-		// Remove the call to drawTree 
-		drawTree(200, 200);
+		programWindow.addMouseListener(this);
+
+		// Remove the call to drawTree
+
 	}
 
-	/* 3. When the right mouse is clicked draw a tree or play music for the right mouse button. */
+	/*
+	 * 3. When the right mouse is clicked draw a tree or play music for the
+	 * right mouse button.
+	 */
 	public void mouseClicked(MouseEvent mouseEvent) {
 		System.out.println("mouse click!");
-		
-		// If the left mouse button is down - SwingUtilities.isLeftMouseButton(mouseEvent)
-		
+
+		// If the left mouse button is down -
+		// SwingUtilities.isLeftMouseButton(mouseEvent)
+		if (SwingUtilities.isLeftMouseButton(mouseEvent)) {
+
 			// draw a tree
-		
+			drawTreeBody();
+		}
 		// Otherwise,
-		
-			// Call the method: drawGreetingAndSing()
-		
+		else {
+			drawGreetingAndSing();
+		}
+		// Call the method: drawGreetingAndSing()
+
 	}
 
 	/* 4. Personalize your card. */
 	void drawGreetingAndSing() {
-		// Download a Christmas sound (wav, midi or aiff) and use the playMusic() method to play it
-		
+		// Download a Christmas sound (wav, midi or aiff) and use the
+		// playMusic() method to play it
+		playMusic("Jingle.wav");
 		// Use the writeGreeting() method to add a Christmas message
-
+		writeGreeting("Hello, it's me.");
 	}
 
 	private void writeGreeting(String greeting) {
@@ -98,19 +117,21 @@ public class HolidayCard extends MouseAdapter {
 	/* 5. Make the trees in the center smaller than those at the edges. */
 	void drawTreeTop(int xPosition, int yPosition) {
 		// Make a variable for the width of the programWindow
-		
-		// Make variable that holds the distance of the mouse from the center of the window. 
-		
+
+		// Make variable that holds the distance of the mouse from the center of
+		// the window.
+
 		// Make sure distance is always a positive number
-		
+
 		// Set tree width to the current distance divided by 10
-		
+
 		// Remove the line that sets the tree width to 15.
 
 		// Set the length variable to 15
 		widthOfTree = 15;
-		// Set the orientation of the Tortoise so that it is pointing straight down
-		Tortoise.setOrientation(xPosition, yPosition, 180);
+		// Set the orientation of the Tortoise so that it is pointing straight
+		// down
+		// Tortoise.setOrientation(xPosition, yPosition, 180);
 		// Change the color of the line the tortoise draws to forest green
 		Tortoise.setPenColor(Colors.Greens.ForestGreen);
 		// Change the width of the line to the current length divided by 5
@@ -140,6 +161,3 @@ public class HolidayCard extends MouseAdapter {
 	}
 
 }
-
-
-

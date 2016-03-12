@@ -1,6 +1,4 @@
 
-// Copyright Wintriss Technical Schools 2013
-
 import java.applet.AudioClip;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
@@ -57,7 +55,6 @@ public class drumKit2 extends MouseAdapter {
 
 	public void mouseClicked(MouseEvent e) {
 		// 14. When the mouse is clicked, print "
- clicked"
 
 		JLabel drumClicked = (JLabel) e.getSource();
 		// 15. Download a drum sound and drop it into your "default package".

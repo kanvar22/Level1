@@ -1,5 +1,5 @@
-// Copyright Wintriss Technical Schools 2013
-import javax.swing.JOptionPane;
+
+/*import javax.swing.JOptionPane;
 
 import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Tortoise;
@@ -23,7 +23,7 @@ public class foursquare {
 			
 	}
 
-	/* 2. Fill in the code to draw a square inside the method below. */
+	 2. Fill in the code to draw a square inside the method below. */
 	static void drawSquare() {
 		//JOptionPane.showMessageDialog(null, "yay! you called the drawSquare() method!");
 		for (int i = 0; i < 4; i++) {
@@ -34,6 +34,7 @@ public class foursquare {
 		}
 		
 	}
-}
+}/*
+
 
 
