@@ -22,32 +22,60 @@ public class SimonSays extends KeyAdapter {
 	private int tries = 0;
 	private int simonSays = 0;
 	Date timeAtStart;
+	int points = 0;
+	boolean saying = false;
 
 	private void makeAlbum() {
-		// 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
+		// 2. add 4 images which match keyboard keys like this: images.put(new
+		// Integer(KeyEvent.VK_UP), "image.jpg");
 		images.put(new Integer(KeyEvent.VK_LEFT), "leftArrow.png");
 		images.put(new Integer(KeyEvent.VK_RIGHT), "rightArrow.jpg");
 		images.put(new Integer(KeyEvent.VK_UP), "upArrow.png");
 		images.put(new Integer(KeyEvent.VK_DOWN), "downArrow.jpg");
-		// 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
-		JOptionPane.showMessageDialog(null, "Press the key that simon says if he dosen't say it then hit a different key.");
+		// 3. Tell the user to "Press the matching key when 'Simon says'
+		// otherwise press a different key"
+		JOptionPane.showMessageDialog(null,
+				"Press the key that simon says if he dosen't say it then hit a different key.");
 		// 4. call the method to show an image
 		showImage();
 	}
 
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-		// 16. make a points variable to track the score. tell the user their score at the end.
-		// 17. if the keyCode matches the imageIndex and "Simon says..." increase their score
-		// 18. if the keyCode doesn't match the imageIndex and "Simon didn't say..." increase their score
+		// 16. make a points variable to track the score. tell the user their
+		// score at the end.
+		if (saying == true && keyCode == imageIndex) {
+			points++;
+			speak("You are correct");
+		}
+		if (saying == false && keyCode != imageIndex) {
+			points++;
+			speak("You are correct");
+		}
+		if (saying == false && keyCode == imageIndex) {
+			points--;
+			speak("You are wrong");
+		}
+		if (saying == true && keyCode != imageIndex) {
+			speak("You are wrong");
+			points--;
+		}
+		// 17. if the keyCode matches the imageIndex and "Simon says..."
+		// increase their score
+		// 18. if the keyCode doesn't match the imageIndex and "Simon didn't
+		// say..." increase their score
 		// 19. Use the speak method to tell the user if they were correct or not
 		// 13. increment tries by 1
+		tries++;
 		// 14. if tries is greater than 9 (or however many you want)
-
+		if (tries > 9) {
+			JOptionPane.showMessageDialog(null, "Your score is " + points);
+			System.exit(0);
+		}
 		// 15. exit the program
 
 		// 11. dispose of the frame
-
+		frame.dispose();
 		// 12. call the method to show an image
 		showImage();
 	}
@@ -57,20 +85,23 @@ public class SimonSays extends KeyAdapter {
 		frame = new JFrame();
 		// 6. set the frame to visible
 		frame.setVisible(true);
-		// frame.add(getNextRandomImage()); //7. rename to the name of your frame
+		// frame.add(getNextRandomImage()); //7. rename to the name of your
+		// frame
 		frame.add(getNextRandomImage());
 		// 8. set the size of the frame
 		frame.setSize(500, 500);
 		// 9. add a key listener to the frame
 		frame.addKeyListener(this);
-		// 10. Use the speak method to either say "Simon says press this key" or "Press this key"
-		speak("hello");
+		// 10. Use the speak method to either say "Simon says press this key" or
+		// "Press this key"
 		Random rand = new Random();
 		int random = rand.nextInt(2);
 		if (random == 0) {
-			System.out.println("Simon says to hit the " + " key");
+			speak("Simon says to hit the key");
+			saying = true;
 		} else if (random == 1) {
-			System.out.println("Hit " + " key");
+			speak("Hit key");
+			saying = false;
 		}
 
 		// Hint: use the simonSays int and a random number
@@ -101,9 +132,11 @@ public class SimonSays extends KeyAdapter {
 	}
 
 	/*
-	 * 20. add a timer ~~~ where the code starts running ~~~ timeAtStart = new Date();
+	 * 20. add a timer ~~~ where the code starts running ~~~ timeAtStart = new
+	 * Date();
 	 *
 	 * ~~~ where the code ends ~~~ Date timeAtEnd = new Date();
-	 * System.out.println((timeAtEnd.getTime()-timeAtStart.getTime())/1000); System.exit(0);
+	 * System.out.println((timeAtEnd.getTime()-timeAtStart.getTime())/1000);
+	 * System.exit(0);
 	 */
 }
