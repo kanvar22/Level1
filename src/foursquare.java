@@ -1,7 +1,4 @@
 
-/*import javax.swing.JOptionPane;
-
-import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Tortoise;
 
 public class foursquare {
@@ -15,26 +12,23 @@ public class foursquare {
 			drawSquare();
 			Tortoise.turn(90);
 		}
-			// 6. Change the color of the line the Tortoise draws to a random color 
-	
-			// 1. Call the drawSquare() method
-		
-			// 7. Turn the tortoise 90 degrees to the right
-			
+		// 6. Change the color of the line the Tortoise draws to a random color
+
+		// 1. Call the drawSquare() method
+
+		// 7. Turn the tortoise 90 degrees to the right
+
 	}
 
-	 2. Fill in the code to draw a square inside the method below. */
+	// 2. Fill in the code to draw a square inside the method below. */
 	static void drawSquare() {
-		//JOptionPane.showMessageDialog(null, "yay! you called the drawSquare() method!");
+		// JOptionPane.showMessageDialog(null, "yay! you called the drawSquare()
+		// method!");
 		for (int i = 0; i < 4; i++) {
-			
-		
-		Tortoise.move(90);
-		Tortoise.turn(90);
+
+			Tortoise.move(90);
+			Tortoise.turn(90);
 		}
-		
+
 	}
-}/*
-
-
-
+}

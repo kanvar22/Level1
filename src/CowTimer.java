@@ -11,7 +11,7 @@ public class CowTimer {
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
 		CowTimer cowtimer2 = new CowTimer();
-		cowtimer2.setTime(10);
+		cowtimer2.setTime(1);
 		cowtimer2.start();
 	}
 
