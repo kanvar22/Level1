@@ -5,17 +5,14 @@ public class SeaCreatureRunner {
 		SeaCreature spoungeBob = new SeaCreature("spongebob");
 		System.out.println(spoungeBob.getName());
 		spoungeBob.eat();
-		spoungeBob.laugh();
 		// Patrick
 		SeaCreature patrick = new SeaCreature("patrick");
 		System.out.println(patrick.getName());
 		patrick.eat();
-		patrick.laugh();
 		// squidward
 		SeaCreature squidward = new SeaCreature("squidward");
 		System.out.println(squidward.getName());
 		squidward.eat();
-		squidward.laugh();
 		// sandy
 		SeaCreature sandy = new SeaCreature("sandy");
 		System.out.println(sandy.getName());

@@ -4,7 +4,7 @@
 * 4. Make 2 more characters from the spongebob world and print their name, job, and house shape
 */
 
-public class SeaCreature1 {
+public class SeaCreature {
 	public static void main(String[] args) {
 		// spounge bob
 		SeaCreature SpoungeBob = new SeaCreature("Spounge");
@@ -20,7 +20,7 @@ public class SeaCreature1 {
 
 	private String name;
 
-	SeaCreature1(String name) {
+	SeaCreature(String name) {
 		this.name = name;
 	}
 
