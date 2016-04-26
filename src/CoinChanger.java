@@ -4,7 +4,7 @@ public class CoinChanger {
 	int moneyGiven;
 
 	public static void main(String[] args) {
-		CoinChanger coinChanger = new CoinChanger(100, 25);
+		CoinChanger coinChanger = new CoinChanger(100, 50);
 		coinChanger.addCoin(5);
 		coinChanger.dispenseCoin(3);
 		coinChanger.totalMoney();
@@ -12,9 +12,6 @@ public class CoinChanger {
 
 	int dispenseCoin(int moneyGiven) {
 		System.out.println("Clink, here is your money.");
-		if (numberOfCoins < 1) {
-			System.out.println("Sorry we don't have enough money for you.");
-		}
 		numberOfCoins -= moneyGiven;
 		return coinDenomination;
 	}
@@ -31,6 +28,17 @@ public class CoinChanger {
 	void totalMoney() {
 		int money = coinDenomination * numberOfCoins;
 		System.out.println("Your money amount is " + money);
+	}
+
+	boolean hasCoins(){
+		if (numberOfCoins<0) {
+			System.out.println("NO MORE COINS!!");
+		}
+		return
+	}
+
+	int getCoinDenomination() {
+		return this.getCoinDenomination();
 	}
 
 	CoinChanger(int numberOfCoins, int coinDenomination) {
