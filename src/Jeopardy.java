@@ -79,19 +79,16 @@ public class Jeopardy implements ActionListener {
 		frame.pack();
 		quizPanel.setLayout(new GridLayout(buttonCount + 1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
-		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height,
-				Toolkit.getDefaultToolkit().getScreenSize().width);
+		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height, Toolkit.getDefaultToolkit().getScreenSize().width);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 	/*
 	 * 13. Use the method provided to play the Jeopardy theme music
 	 * 
-	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000
-	 * questions
+	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 	 *
-	 * [optional] Use the showImage or playSound methods when the user answers a
-	 * question
+	 * [optional] Use the showImage or playSound methods when the user answers a question
 	 */
 
 	private JButton createButton(String dollarAmount) {
@@ -162,8 +159,7 @@ public class Jeopardy implements ActionListener {
 
 	public void playJeopardyTheme() {
 		try {
-			AudioInputStream audioInputStream = AudioSystem
-					.getAudioInputStream(new File("/Users/League/Google Drive/league-sounds/jeopardy.wav"));
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("/Users/League/Google Drive/league-sounds/jeopardy.wav"));
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioInputStream);
 			clip.start();
